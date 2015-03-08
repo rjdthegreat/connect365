@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  school_id: 
+  standard: 1
+  division: MyString
+
+two:
+  school_id: 
+  standard: 1
+  division: MyString

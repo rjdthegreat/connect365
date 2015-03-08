@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  student_id: 
+  first_name: MyString
+  last_name: MyString
+  contact_number: MyString
+  email_address: MyString
+  is_pending: false
+
+two:
+  student_id: 
+  first_name: MyString
+  last_name: MyString
+  contact_number: MyString
+  email_address: MyString
+  is_pending: false

@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+
+<p>
+  <strong>Name:</strong>
+  <%= @school.name %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @school.city %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @school.address %>
+</p>
+
+<p>
+  <strong>Contact number:</strong>
+  <%= @school.contact_number %>
+</p>
+
+<p>
+  <strong>Email address:</strong>
+  <%= @school.email_address %>
+</p>
+
+<p class="table_heading">Notifications for this school</p>
+   <%= render :partial => "shared/notification_table", :locals => { :notifications => @notifications } %>
+<br>
+<p class="table_heading">List of Classrooms for this school</p>
+   <%= render :partial => "shared/classrooms_table", :locals => { :classrooms => @classrooms } %>
+<br>
+
+<p class="table_heading">Pending Teachers Approval List</p>
+   <%= render :partial => "shared/pending_table", :locals => { :pending_list => @pending_teachers, :model_name => "teachers" } %>
+<br>
+
+<%= link_to 'Edit', edit_school_path(@school) %>

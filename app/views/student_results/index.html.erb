@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Student Results</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Exam</th>
+      <th>Student</th>
+      <th>Grade</th>
+      <th>Comments</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @student_results.each do |student_result| %>
+      <tr>
+        <td><%= student_result.exam %></td>
+        <td><%= student_result.student %></td>
+        <td><%= student_result.grade %></td>
+        <td><%= student_result.comments %></td>
+        <td><%= link_to 'Show', student_result %></td>
+        <td><%= link_to 'Edit', edit_student_result_path(student_result) %></td>
+        <td><%= link_to 'Destroy', student_result, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Student result', new_student_result_path %>

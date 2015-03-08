@@ -1,0 +1,41 @@
+<%= form_for(@teacher_to_parent_notification) do |f| %>
+  <% if @teacher_to_parent_notification.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@teacher_to_parent_notification.errors.count, "error") %> prohibited this teacher_to_parent_notification from being saved:</h2>
+
+      <ul>
+      <% @teacher_to_parent_notification.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :teacher_id %><br>
+    <%= f.text_field :teacher_id %>
+  </div>
+  <div class="field">
+    <%= f.label :parent_id %><br>
+    <%= f.text_field :parent_id %>
+  </div>
+  <div class="field">
+    <%= f.label :importance %><br>
+    <%= f.number_field :importance %>
+  </div>
+  <div class="field">
+    <%= f.label :subject %><br>
+    <%= f.text_field :subject %>
+  </div>
+  <div class="field">
+    <%= f.label :content %><br>
+    <%= f.text_field :content %>
+  </div>
+  <div class="field">
+    <%= f.label :show_until %><br>
+    <%= f.date_select :show_until %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

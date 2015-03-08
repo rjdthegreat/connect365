@@ -1,0 +1,16 @@
+<table class="classrooms_table">
+	<thead>
+		<th>Standard</th>
+		<th>Division</th>
+		<th>Action</th>
+	</thead>
+	<tbody>
+	<% classrooms.each do | n | %>
+		<tr>
+			<td><%=n.standard%></td>
+			<td><%=n.division%></td>
+			<td><%= link_to 'Delete', n, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		</tr>
+	<%end%>
+	<tbody>
+<table>

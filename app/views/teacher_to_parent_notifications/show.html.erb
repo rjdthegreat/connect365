@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Teacher:</strong>
+  <%= @teacher_to_parent_notification.teacher %>
+</p>
+
+<p>
+  <strong>Parent:</strong>
+  <%= @teacher_to_parent_notification.parent %>
+</p>
+
+<p>
+  <strong>Importance:</strong>
+  <%= @teacher_to_parent_notification.importance %>
+</p>
+
+<p>
+  <strong>Subject:</strong>
+  <%= @teacher_to_parent_notification.subject %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @teacher_to_parent_notification.content %>
+</p>
+
+<p>
+  <strong>Show until:</strong>
+  <%= @teacher_to_parent_notification.show_until %>
+</p>
+
+<%= link_to 'Edit', edit_teacher_to_parent_notification_path(@teacher_to_parent_notification) %> |
+<%= link_to 'Back', teacher_to_parent_notifications_path %>

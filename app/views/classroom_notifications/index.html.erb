@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Classroom Notifications</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Classroom</th>
+      <th>Importance</th>
+      <th>Subject</th>
+      <th>Content</th>
+      <th>Show until</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @classroom_notifications.each do |classroom_notification| %>
+      <tr>
+        <td><%= classroom_notification.classroom %></td>
+        <td><%= classroom_notification.importance %></td>
+        <td><%= classroom_notification.subject %></td>
+        <td><%= classroom_notification.content %></td>
+        <td><%= classroom_notification.show_until %></td>
+        <td><%= link_to 'Show', classroom_notification %></td>
+        <td><%= link_to 'Edit', edit_classroom_notification_path(classroom_notification) %></td>
+        <td><%= link_to 'Destroy', classroom_notification, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Classroom notification', new_classroom_notification_path %>

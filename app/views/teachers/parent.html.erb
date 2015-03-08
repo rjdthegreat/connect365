@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Parent Of:</strong>
+  <%= @parent.student.first_name %> <%= @parent.student.last_name %>
+</p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @parent.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @parent.last_name %>
+</p>
+
+<p>
+  <strong>Contact number:</strong>
+  <%= @parent.contact_number %>
+</p>
+
+<p>
+  <strong>Email address:</strong>
+  <%= @parent.email_address %>
+</p>
+
+<p class="table_heading">Send Notification To Parent</p>
+	<%=form_tag(:action => 'send_from_teacher_to_parent') do%>
+	<%=hidden_field_tag :parent_id, @parent.id%>
+	<%=hidden_field_tag :teacher_id, @teacher.id%>
+	<div class="field">
+    <%= label_tag :subject %><br>
+    <%= text_field_tag :subject %>
+  </div>
+  <div class="field">
+    <%= label_tag :content %><br>
+    <%= text_field_tag :content %>
+  </div>
+
+  <div class="actions">
+    <%= submit_tag "Send Message"%>
+  </div>
+	<%end%>
+
+</p>
+
+

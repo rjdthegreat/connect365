@@ -1,0 +1,23 @@
+<table class="pending_table">
+	<thead>
+		<th>First Name</th>
+		<th>Last Name</th>
+		<th>Action</th>
+	</thead>
+	<tbody>
+	<% pending_list.each do | n | %>
+		<tr>
+			<td><%= n.first_name%></td>
+			<td><%= n.last_name%></td>
+			<td>
+			<% if model_name == "teachers"%>
+			<%= link_to "Approve", approve_teacher_path(n.id), method: :post %>
+			<% else %>
+			<%= link_to "Approve", approve_parent_path(n.id), method: :post %>
+			<% end %>
+			</td>
+		</tr>
+	<%end%>
+	<tbody>
+<table>
+	

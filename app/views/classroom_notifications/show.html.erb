@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Classroom:</strong>
+  <%= @classroom_notification.classroom %>
+</p>
+
+<p>
+  <strong>Importance:</strong>
+  <%= @classroom_notification.importance %>
+</p>
+
+<p>
+  <strong>Subject:</strong>
+  <%= @classroom_notification.subject %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @classroom_notification.content %>
+</p>
+
+<p>
+  <strong>Show until:</strong>
+  <%= @classroom_notification.show_until %>
+</p>
+
+<%= link_to 'Edit', edit_classroom_notification_path(@classroom_notification) %> |
+<%= link_to 'Back', classroom_notifications_path %>

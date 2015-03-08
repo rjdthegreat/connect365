@@ -1,0 +1,26 @@
+<table class="notification_table">
+	<thead>
+		<th>Subject</th>
+		<th>Content</th>
+		<th>Action</th>
+	</thead>
+	<tbody>
+	<% notifications.each do | n | %>
+		<tr>
+			<td><%=n.subject%></td>
+			<td><%=n.content%></td>
+			<%if n.class.name == "SchoolNotification" && session[:role] == "School"%>
+				<td><%= link_to 'Delete', school_notification_path(n.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+			<% elsif n.class.name == "ClassroomNotification" && session[:role] == "Teacher"%>
+				<td><%= link_to 'Delete', classroom_notification_path(n.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+			<% elsif n.class.name == "ParentToTeacherNotification" && session[:role] == "Teacher"%>
+				<td><%= link_to 'Delete', parent_to_teacher_notification_path(n.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+			<% elsif n.class.name == "TeacherToParentNotification" && session[:role] == "Parent"%>
+				<td><%= link_to 'Delete', teacher_to_parent_notification_path(n.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+			<%else%>
+				<td></td>
+			<%end%>
+		</tr>
+	<%end%>
+	<tbody>
+<table>

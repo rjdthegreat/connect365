@@ -1,0 +1,2 @@
+module SchoolNotificationsHelper
+end

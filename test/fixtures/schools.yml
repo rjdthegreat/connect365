@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  city: MyString
+  address: MyString
+  contact_number: MyString
+  email_address: MyString
+  is_pending: false
+
+two:
+  name: MyString
+  city: MyString
+  address: MyString
+  contact_number: MyString
+  email_address: MyString
+  is_pending: false

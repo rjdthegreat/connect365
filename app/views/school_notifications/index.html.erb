@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing School Notifications</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>School</th>
+      <th>Importance</th>
+      <th>Subject</th>
+      <th>Content</th>
+      <th>Show until</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @school_notifications.each do |school_notification| %>
+      <tr>
+        <td><%= school_notification.school %></td>
+        <td><%= school_notification.importance %></td>
+        <td><%= school_notification.subject %></td>
+        <td><%= school_notification.content %></td>
+        <td><%= school_notification.show_until %></td>
+        <td><%= link_to 'Show', school_notification %></td>
+        <td><%= link_to 'Edit', edit_school_notification_path(school_notification) %></td>
+        <td><%= link_to 'Destroy', school_notification, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New School notification', new_school_notification_path %>

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  parent_id: 
+  teacher_id: 
+  importance: 1
+  subject: MyString
+  content: MyString
+  show_until: 2015-03-07
+
+two:
+  parent_id: 
+  teacher_id: 
+  importance: 1
+  subject: MyString
+  content: MyString
+  show_until: 2015-03-07

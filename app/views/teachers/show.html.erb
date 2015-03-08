@@ -1,0 +1,83 @@
+<p id="notice">
+	<%= notice %>
+</p>
+
+<p>
+	<strong>Classroom:</strong>
+	<%= @teacher.classroom.standard%> <%= @teacher.classroom.division%>
+</p>
+
+<p>
+	<strong>First name:</strong>
+	<%= @teacher.first_name %>
+</p>
+
+<p>
+	<strong>Last name:</strong>
+	<%= @teacher.last_name %>
+</p>
+
+<p>
+	<strong>Contact number:</strong>
+	<%= @teacher.contact_number %>
+</p>
+
+<p>
+	<strong>Email address:</strong>
+	<%= @teacher.email_address %>
+</p>
+
+<p class="table_heading">
+	Notifications for the school
+</p>
+<%= render :partial => "shared/notification_table", :locals => { :notifications => @school_notifications } %>
+<br>
+
+<p class="table_heading">
+	Notifications for the Class
+</p>
+Notifications for this school
+<%= render :partial => "shared/notification_table", :locals => { :notifications => @classroom_notification } %>
+<br>
+
+<p class="table_heading">
+	Individual Notifications
+</p>
+<%= render :partial => "shared/notification_table", :locals => { :notifications => @individual_notifications } %>
+<br>
+
+<p class="table_heading">
+	Pending Parents Approval List
+</p>
+<%= render :partial => "shared/pending_table", :locals => { :pending_list => @pending_parents, :model_name => "parents" } %>
+<br>
+
+<p class="table_heading">
+	Add Message for the class:
+</p>
+<br>
+<div class="border_top">
+	<%= form_tag(:action => 'add_classroom_notification',) do %>
+	<%= hidden_field_tag :teacher_id, @teacher.id%>
+	<%= hidden_field_tag :classroom_id, @teacher.classroom.id%>
+	<div class="field">
+		<%= label_tag :subject %>
+		<br>
+		<%= text_field_tag :subject %>
+	</div>
+	<div class="field">
+		<%= label_tag :content %>
+		<br>
+		<%= text_field_tag :content%>
+	</div>
+
+	<div class="actions">
+		<%= submit_tag "Add Notification" %>
+	</div>
+	<% end %>
+</div>
+
+<p class="table_heading">List All Students in the class</p>
+<%= link_to "List Students",students_teacher_path(@teacher.id)%>
+<!-- <%= link_to 'Edit', edit_teacher_path(@teacher) %> -->
+

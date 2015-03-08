@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  classroom_id: 
+  first_name: MyString
+  last_name: MyString
+  doB: 2015-03-07
+
+two:
+  classroom_id: 
+  first_name: MyString
+  last_name: MyString
+  doB: 2015-03-07

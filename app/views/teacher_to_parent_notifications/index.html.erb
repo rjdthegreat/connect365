@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Teacher To Parent Notifications</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Teacher</th>
+      <th>Parent</th>
+      <th>Importance</th>
+      <th>Subject</th>
+      <th>Content</th>
+      <th>Show until</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @teacher_to_parent_notifications.each do |teacher_to_parent_notification| %>
+      <tr>
+        <td><%= teacher_to_parent_notification.teacher %></td>
+        <td><%= teacher_to_parent_notification.parent %></td>
+        <td><%= teacher_to_parent_notification.importance %></td>
+        <td><%= teacher_to_parent_notification.subject %></td>
+        <td><%= teacher_to_parent_notification.content %></td>
+        <td><%= teacher_to_parent_notification.show_until %></td>
+        <td><%= link_to 'Show', teacher_to_parent_notification %></td>
+        <td><%= link_to 'Edit', edit_teacher_to_parent_notification_path(teacher_to_parent_notification) %></td>
+        <td><%= link_to 'Destroy', teacher_to_parent_notification, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Teacher to parent notification', new_teacher_to_parent_notification_path %>

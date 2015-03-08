@@ -1,0 +1,22 @@
+<h1>Login Page</h1>
+ <% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+  <% end %>
+
+<%= form_tag(:action => 'validate_login',) do %>
+  <div class="field">
+    <%= label_tag :username %><br>
+    <%= text_field_tag :username %>
+  </div>
+  <div class="field">
+    <%= label_tag :password %><br>
+    <%= password_field_tag :password %>
+  </div>
+  <div class="actions">
+    <%= submit_tag "Login"%>
+  </div>
+  <%end%>
+ <br>
+ <a href="/schools/new">SignUp As School </a> <br>
+ <a href="/teachers/new">SignUp As Teacher </a> <br>
+ <a href="/parents/new">SignUp As Parent </a> 
